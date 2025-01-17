@@ -1,0 +1,43 @@
+
+.navbar{
+    width: 80%;
+    margin: auto;
+}
+
+
+.left-header .nav-links a {
+    text-decoration: none; 
+    color: #000; 
+}
+
+.left-header .nav-links a:hover {
+    color: #007BFF; 
+}
+
+.navbar-nav {
+    justify-content: center;
+    margin: auto;
+}
+
+.form-inline {
+    margin-left: 160px;
+}
+
+.nav-icon {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 6px;
+}
+
+.nav-icon:hover {
+    border: none;
+    background-color: rgb(231, 231, 231);
+    border-radius: 200%;
+}
+
+.nav-icon img {
+    width: 30px;
+    height: 30px;
+}

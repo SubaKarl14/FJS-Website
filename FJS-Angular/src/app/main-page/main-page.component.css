@@ -1,0 +1,23 @@
+.first-content {
+    width: 100%;
+    background-color: rgb(231, 231, 231);
+    height: 700px;
+}
+
+.view-all {
+    cursor: pointer;
+    border-bottom: 1px solid  rgb(172, 172, 172);
+    transition: all 0.3s ease-in-out;
+    width: 80px;
+    margin: auto;
+}
+.view-all:hover {
+    border-bottom: 1px solid  rgb(0, 0, 0);
+}
+
+.item-carousel {
+    background-color: rgb(231, 231, 231);
+    width: 100%;
+    height: 500px;
+    margin-bottom: 80px;
+}
