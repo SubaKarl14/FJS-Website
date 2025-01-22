@@ -1,0 +1,82 @@
+<div class="main-content container">
+    <div class="Header d-flex align-items-center">
+      <h1>Products</h1>
+      <span class="material-icons ms-2" (click)="openCreateProductDialog()">
+        add_circle_outline
+        </span>
+    </div>
+    <div class="sort-row d-flex">
+      <label for="">SORT BY</label>
+      <div class="sorter-option">
+            <div class="dropdown">
+                <button
+                class="btn  dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Sort By
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Popularity</a></li>
+                <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+                <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
+                <li><a class="dropdown-item" href="#">Newest Arrivals</a></li>
+                </ul>
+            </div>
+      </div>
+    </div>
+
+    <div class="total-products">
+        <p>100 PRODUCTS</p>
+    </div>
+
+    <table class="jersey">
+        <tbody class="container-row">
+            <tr *ngFor="let product of products"  >
+                <td >
+                <div class="jersey-container d-flex flex-column align-items-center justify-content-center">
+
+                    <div class="jersey-iamge">
+                        <img 
+                            *ngIf="product.image" 
+                            [src]="'http://127.0.0.1:8000/images/' + product.image" 
+                            alt="Product Image" 
+                            >
+                    </div>
+
+                    <div class="jersey-title">
+                        <h1>{{product.title}}</h1>
+                    </div>
+
+                    <div class="jersey-condition">
+                        <p>Condition: {{product.condition}}</p>
+                    </div>
+
+                    <div class="bottom d-flex justify-content-between align-items-center">
+                        <div class="jersey-price ">
+                            <h2>{{ product.price | currency:'PHP':'symbol' }}</h2>
+                        </div>
+                    
+            
+                        <div class="jersey-button">
+                            <button class="btn " (click)="openProductDialog(product)">
+                                <span class="material-icons text-primary">edit</span>
+                            </button>
+                            
+                            <button class="btn text-danger" (click)="deleteProduct(product.id)">
+                                <span class="material-icons">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+  </div>
+  

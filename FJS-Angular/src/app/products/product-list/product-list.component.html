@@ -1,5 +1,5 @@
 <div class="main-content container">
-    <div class="Header">
+    <div class="Header d-flex align-items-center">
       <h1>Products</h1>
     </div>
     <div class="sort-row d-flex">
@@ -28,29 +28,40 @@
         <p>100 PRODUCTS</p>
     </div>
 
-    <div class="jersey">
-        <div class="container-row">
-                <div class="jersey-container">
+    <table class="jersey">
+        <tbody class="container-row">
+            <tr *ngFor="let product of products" >
+                <td >
+                <div class="jersey-container d-flex flex-column align-items-center justify-content-center">
 
                     <div class="jersey-iamge">
-                        <img src="assets/jersey-image/jerseyimage.png" alt="">
+                        <img 
+                            *ngIf="product.image" 
+                            [src]="'http://127.0.0.1:8000/images/' + product.image" 
+                            alt="Product Image" 
+                            >
                     </div>
 
                     <div class="jersey-title">
-                        <h1>2004-05 Inter Milan Home Shirt - 8/10 - (S)</h1>
+                        <h1>{{product.title}}</h1>
                     </div>
 
                     <div class="jersey-condition">
-                        <p>Condition: Excellent</p>
+                        <p>Condition: {{product.condition}}</p>
                     </div>
 
-                    <div class="jersey-price">
-                        <h2>$100</h2>
-                    </div>
+                        <div class="jersey-price ">
+                            <h2>{{ product.price | currency:'PHP':'symbol' }}</h2>
+                        </div>
+
+                    
                 </div>
 
+            </td>
+            </tr>
 
-        </div>
-    </div>
+        </tbody>
+    </table>
+
   </div>
   

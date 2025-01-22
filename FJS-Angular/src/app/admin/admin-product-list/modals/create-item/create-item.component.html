@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Create Product</h2>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="jerseyTitle" placeholder="Enter product title" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Price</mat-label>
+    <input matInput type="number" [(ngModel)]="jerseyPrice" placeholder="Enter product price" required />
+  </mat-form-field>
+
+  <!-- Image -->
+  <div style="margin: 1em 0;">
+    <label for="fileInput">Upload Product Image:</label>
+    <input
+      id="fileInput"
+      type="file"
+      (change)="onImageSelected($event)"
+      accept="image/*"
+      required
+    />
+  </div>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Condition</mat-label>
+    <input matInput [(ngModel)]="jerseyCondition" placeholder="Enter product condition" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Size</mat-label>
+    <input matInput [(ngModel)]="jerseySize" placeholder="Enter product size" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Defect</mat-label>
+    <textarea matInput [(ngModel)]="jerseyDefect" placeholder="Describe any defects" required></textarea>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+</div>
