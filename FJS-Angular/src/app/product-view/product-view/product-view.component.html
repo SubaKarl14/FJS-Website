@@ -1,25 +1,54 @@
-<header>
-    
-</header>
-
-<div>
-    <div class="image-slide">
-
+<header class="product-header text-center py-3">
+    <h1>Product Preview</h1>
+  </header>
+  
+  <div class="product-preview container d-flex flex-column flex-md-row my-4">
+    <!-- Image Section -->
+    <div class="product-preview container d-flex flex-md-row ">
+        <!-- Image Section -->
+        <div class="image-section d-flex ">
+            <!-- (smaller version in the slide section) -->
+            <div class="image-slide">
+              <img
+                *ngIf="product"
+                [src]="'http://127.0.0.1:8000/images/' + product.image"
+                alt="Product Image"
+                class="small-image img-fluid rounded " 
+              />
+            </div>
+          
+            <!-- Image Preview Thumbnails -->
+            <div class="image-preview d-flex gap-2 mt-3">
+              <!-- Thumbnails of the product images with a fixed size of 300px -->
+              <img
+                *ngIf="product"
+                [src]="'http://127.0.0.1:8000/images/' + product.image"
+                alt="Product Image"
+                class="main-image img-fluid rounded" 
+              />
+            </div>
+          </div>
+          
+      </div>
+      
+  
+    <!-- Jersey Details -->
+    <div class="jersey-details ms-md-5 mt-4 mt-md-0">
+      <h1 class="jersey-title">{{ product.title }}</h1>
+      <h2 class="jersey-price text-primary">₱{{ product.price | number }}</h2>
+  
+      <!-- Call-to-Action Buttons -->
+      <div class="btn-group d-flex flex-column gap-2 my-4">
+        <button class="btn btn-primary">Add to Cart</button>
+        <button class="btn btn-outline-primary">Buy Now</button>
+      </div>
+  
+      <!-- Product Description -->
+      <div class="jersey-description mt-3">
+        <p><strong>Product Size:</strong> {{ product.size }}</p>
+        <p><strong>Product Condition:</strong> {{ product.condition }}</p>
+        <p><strong>Defect:</strong> {{ product.defect }}</p>
+      </div>
     </div>
-    <div class="image-preview">
-
-    </div>
-    <div class="jersey-details">
-        <h1>1990-92 Aston Villa Home Shirt - 8/10 - (L)</h1>
-        <h1>P1,234,234</h1>
-        <div class="btn d-flex flex-column">
-            <button class="btn btn-primary">Add to Cart</button>
-            <button class="btn btn-outline-primary">Buy Now</button>
-        </div>
-        <div class="jersey-description">
-            <p>Product Size: L</p>
-            <p>Product Condition: New</p>
-            <p>Defect: None</p>
-        </div>
-    </div>
-</div>
+  </div>
+  

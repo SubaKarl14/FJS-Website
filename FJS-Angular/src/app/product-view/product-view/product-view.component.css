@@ -1,0 +1,31 @@
+.preview-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+
+.small-image {
+    width: 150px; 
+    height: auto;
+    margin-top: 20px;
+  }
+  
+
+  .preview-image {
+    width: 100px; 
+    height: auto;
+    cursor: pointer; 
+  }
+  
+  .main-image {
+    width: 700px;
+    height: 550px;
+
+  }
+  
+
+  .jersey-details {
+    max-width: 500px;
+    min-width: 400px;
+  }

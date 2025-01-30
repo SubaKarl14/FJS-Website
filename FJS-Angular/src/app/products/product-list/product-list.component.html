@@ -32,9 +32,9 @@
         <tbody class="container-row">
             <tr *ngFor="let product of products" >
                 <td >
-                <div class="jersey-container d-flex flex-column align-items-center justify-content-center">
+                <div class="jersey-container d-flex flex-column align-items-center justify-content-center" [routerLink]="['/product', product.id]">
 
-                    <div class="jersey-iamge">
+                    <div class="jersey-image">
                         <img 
                             *ngIf="product.image" 
                             [src]="'http://127.0.0.1:8000/images/' + product.image" 

@@ -20,7 +20,7 @@ export class AdminProductListComponent implements OnInit {
   openCreateProductDialog() {
     const dialogRef = this.dialog.open(CreateItemComponent, {
       width: '500px',
-      height: '560px',
+      height: '650px',
       data: {},
     });
 
@@ -81,7 +81,7 @@ export class AdminProductListComponent implements OnInit {
     });
   }
   
-  openProductDialog(product?: any) {
+openProductDialog(product?: any) {
     const dialogRef = this.dialog.open(CreateItemComponent, {
       width: '600px',
       data: { product } // Pass the product if editing, otherwise undefined

@@ -7,24 +7,27 @@ import { DataProduct } from 'src/app/services/data-product';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit{
+export class ProductListComponent implements OnInit {
+  products: any[] = [];
+  product = new DataProduct();
 
-    products: any[] = [];
-  
-    product = new DataProduct();
   constructor(private dataProductsApiService: DataProductsApiService) {}
-
 
   ngOnInit(): void {
     this.getProductsData();
   }
 
   getProductsData() {
-    console.log(this.products);
-    console.log('getProductsData');
-    this.dataProductsApiService.getData().subscribe((err) => {
-      this.products = err;
-      console.log(err);
-    })
-}
+    console.log('Fetching products...');
+    this.dataProductsApiService.getData().subscribe((data) => {
+      // Process each product to parse the images if needed
+      this.products = data.map((product: any) => {
+        if (typeof product.images === 'string') {
+          product.images = JSON.parse(product.images); // Parse if images are stored as a JSON string
+        }
+        return product;
+      });
+      console.log(this.products);
+    });
+  }
 }

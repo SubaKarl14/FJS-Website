@@ -20,10 +20,6 @@ const routes: Routes = [
     component: ProductListComponent
   }, 
   {
-    path: 'product-view',
-    component: ProductViewComponent
-  },
-  {
    path: 'product/:id', component: ProductViewComponent  // Dynamic product preview route
 
   },

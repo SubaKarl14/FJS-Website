@@ -12,6 +12,11 @@ class ProductController extends Controller
         return response()->json($products);
     }
 
+    public function show($id){
+        $product = Product::findOrFail($id);
+        return response()->json($product);
+    }
+
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
             'title' => 'required',

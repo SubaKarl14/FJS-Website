@@ -14,6 +14,10 @@ export class DataProductsApiService {
     return this.httpClient.get<any>('http://127.0.0.1:8000/products');
   }
 
+  getDataById(id: number): Observable<any> {
+    return this.httpClient.get<any>(`http://127.0.0.1:8000/products/${id}`);
+  }
+
   insertData(product: any): Observable<any> {
     return this.httpClient.post('http://127.0.0.1:8000/products/create',product);
   }

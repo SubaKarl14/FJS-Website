@@ -1,6 +1,3 @@
-.main-content{
-    width: 90%;
-}
 
 .dropdown-toggle {
     color: black;
@@ -15,13 +12,17 @@
 
 .jersey-container {
     margin-left: 5px;
-    width: 350px;
+    width: 315px;
 
 }
 
-.jersey-iamge img{
-    width: 350px;
+.jersey-image img{
+    width: 315px;
     height: 260px;
+}
+
+.jersey-title{
+    height: 60px;
 }
 
 
